@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('angularDjangoRegistrationAuthApp')
-  .controller('LoginCtrl', function ($scope, $location, djangoAuth, Validate) {
+  .controller('LoginCtrl', ['$scope', '$location', 'djangoAuth', 'Validate', 
+  function ($scope, $location, djangoAuth, Validate) {
     $scope.model = {'username':'','password':''};
   	$scope.complete = false;
     $scope.login = function(formData){
@@ -18,4 +19,4 @@ angular.module('angularDjangoRegistrationAuthApp')
         });
       }
     }
-  });
+  }]);

@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('angularDjangoRegistrationAuthApp')
-  .controller('MainCtrl', function ($scope, $cookies, $location, djangoAuth) {
+  .controller('MainCtrl', ['$scope', '$cookies', '$location', 'djangoAuth',
+  function ($scope, $cookies, $location, djangoAuth) {
     
     $scope.login = function(){
       djangoAuth.login(prompt('Username'),prompt('password'))
@@ -74,4 +75,4 @@ angular.module('angularDjangoRegistrationAuthApp')
       $scope.show_login = true;
     });
 
-  });
+  }]);

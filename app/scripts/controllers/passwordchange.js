@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('angularDjangoRegistrationAuthApp')
-  .controller('PasswordchangeCtrl', function ($scope, djangoAuth, Validate) {
+  .controller('PasswordchangeCtrl', ['$scope', 'djangoAuth', 'Validate',
+  function ($scope, djangoAuth, Validate) {
     $scope.model = {'new_password1':'','new_password2':''};
   	$scope.complete = false;
     $scope.changePassword = function(formData){
@@ -18,4 +19,4 @@ angular.module('angularDjangoRegistrationAuthApp')
         });
       }
     }
-  });
+  }]);

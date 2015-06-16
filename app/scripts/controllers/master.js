@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('angularDjangoRegistrationAuthApp')
-  .controller('MasterCtrl', function ($scope, $location, djangoAuth) {
+  .controller('MasterCtrl', ['$scope', '$location', 'djangoAuth',
+  function ($scope, $location, djangoAuth) {
     // Assume user is not logged in until we hear otherwise
     $scope.authenticated = false;
     // Wait for the status of authentication, set scope var to true if it resolves
@@ -21,4 +22,4 @@ angular.module('angularDjangoRegistrationAuthApp')
       console.error("Unable to change routes.  Error: ", rejection)
       $location.path('/restricted').replace();
     });
-  });
+  }]);

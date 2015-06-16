@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('angularDjangoRegistrationAuthApp')
-  .service('djangoAuth', function djangoAuth($q, $http, $cookies, $rootScope) {
+  .service('djangoAuth', ['$q', '$http', '$cookies', '$rootScope',
+  function djangoAuth($q, $http, $cookies, $rootScope) {
     // AngularJS will instantiate a singleton by calling "new" on this function
     var service = {
         /* START CUSTOMIZATION HERE */
@@ -205,4 +206,4 @@ angular.module('angularDjangoRegistrationAuthApp')
 
     }
     return service;
-  });
+  }]);

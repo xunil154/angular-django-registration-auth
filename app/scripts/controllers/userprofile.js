@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('angularDjangoRegistrationAuthApp')
-  .controller('UserprofileCtrl', function ($scope, djangoAuth, Validate) {
+  .controller('UserprofileCtrl', ['$scope', 'djangoAuth', 'Validate',
+  function ($scope, djangoAuth, Validate) {
     $scope.model = {'first_name':'','last_name':'','email':''};
   	$scope.complete = false;
   	djangoAuth.profile().then(function(data){
@@ -21,4 +22,4 @@ angular.module('angularDjangoRegistrationAuthApp')
         });
       }
     }
-  });
+  }]);

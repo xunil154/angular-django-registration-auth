@@ -6,7 +6,7 @@ angular.module('angularDjangoRegistrationAuthApp', [
   'ngSanitize',
   'ngRoute',
 ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -102,7 +102,7 @@ angular.module('angularDjangoRegistrationAuthApp', [
       .otherwise({
         redirectTo: '/'
       });
-  })
+  }]);
   .run(function(djangoAuth){
     djangoAuth.initialize('//127.0.0.1:8000/rest-auth', false);
   });
